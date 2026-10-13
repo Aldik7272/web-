@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div>
+      <p class="small-title">Laboratory Work 4</p>
+      <h1>Event Registration</h1>
+    </div>
+    <button id="themeButton" class="theme-button" type="button">Dark theme</button>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Choose an event</h2>
+      <p class="section-text">Select one event before completing the registration form.</p>
+      <p id="selectedText" class="selected-text">No event selected</p>
+
+      <div class="event-grid" id="eventList">
+        <article class="event-card" data-event="Web Design Workshop">
+          <span class="event-label">WORKSHOP</span>
+          <h3>Web Design Workshop</h3>
+          <p class="event-time">18 October · 14:00</p>
+          <p>Learn simple principles for creating clean and responsive web pages.</p>
+          <button class="select-button" type="button">Select</button>
+        </article>
+
+        <article class="event-card" data-event="JavaScript Quiz">
+          <span class="event-label">QUIZ</span>
+          <h3>JavaScript Quiz</h3>
+          <p class="event-time">20 October · 12:30</p>
+          <p>Test your JavaScript basics in a friendly student quiz.</p>
+          <button class="select-button" type="button">Select</button>
+        </article>
+
+        <article class="event-card" data-event="IT Career Talk">
+          <span class="event-label">TALK</span>
+          <h3>IT Career Talk</h3>
+          <p class="event-time">22 October · 16:00</p>
+          <p>Meet IT specialists and ask questions about your future career.</p>
+          <button class="select-button" type="button">Select</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h2>Registration form</h2>
+      <form id="registrationForm" novalidate>
+        <input id="selectedEvent" type="hidden">
+
+        <div class="form-group">
+          <label for="fullName">Full name</label>
+          <input id="fullName" type="text" placeholder="For example, Aida S." autocomplete="name">
+          <small id="nameCount">0 characters</small>
+          <p class="error-message" id="nameError"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="name@example.com" autocomplete="email">
+          <p class="error-message" id="emailError"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="group">Student group</label>
+          <input id="group" type="text" placeholder="For example, IT-2401">
+          <p class="error-message" id="groupError"></p>
+        </div>
+
+        <label class="checkbox-row" for="agreement">
+          <input id="agreement" type="checkbox">
+          <span>I agree to the event rules.</span>
+        </label>
+        <p class="error-message" id="agreementError"></p>
+        <p class="error-message" id="eventError"></p>
+
+        <button class="register-button" type="submit">Register now</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Registration result</h2>
+      <p id="successMessage" class="success-message"></p>
+      <ul id="registrationList" class="registration-list"></ul>
+    </section>
+
+    <section class="guests-section">
+      <div class="guests-title">
+        <div>
+          <h2>Guest directory</h2>
+          <p class="section-text">Load demo users from a public REST API.</p>
+        </div>
+        <button id="loadGuestsButton" class="load-button" type="button">Load guests</button>
+      </div>
+      <p id="guestStatus" class="guest-status"></p>
+      <div id="guestList" class="guest-grid"></div>
+    </section>
+  </main>
+
+  <footer>Web Technologies · Laboratory Work 4</footer>
+  <script src="script.js"></script>
+</body>
+</html>
